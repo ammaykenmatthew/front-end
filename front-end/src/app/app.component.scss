@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+   
+}
 mat-toolbar {
     background: #ffffff;
     color: rgb(0, 0, 0);
@@ -8,30 +13,37 @@ mat-toolbar {
     z-index: 5;
     font-family: sans-serif;
     font-size: 20px;
+
+    button{
+        margin-top: -2.5px;
+    }
 }
 
 .example-spacer {
     flex: 1 1 auto;
 }
+//Overview
 
 .overView{
-    padding-left: 100px;
-    padding-top: 70px;
+    width: 100%;
+    margin: 70px 0 20px 85px;
+    display: flex;
 }
 .textOverview{
     font-family: sans-serif;
-    font-size: 30px;
-    padding-left: 20px;
+    font-size: 30px; 
 }
-.textOverview::after{
+.line::after{
     content: " ";
     height: 3px;
-    width: 1400px;
+    width: 78%;
     background-color: silver;
-    display: block;
+    display: flex;
     position: absolute;
     top: 13%;
-    right: 7.5em;
+    right: 250px;
+    left:240px;
+    margin: 0 auto; 
 }
 .refBut{
     background-color: rgb(161, 160, 160);
@@ -42,38 +54,187 @@ mat-toolbar {
     font-family: sans-serif;
     font-size: 15px;
 }
+// @media only screen and (min-width: 768px){
+//     .textOverview{
+//        padding-left: 130px;
+    
+//     }
+// }
+
 
 //cards
-.allCards > mat-card-content{
-    position: absolute;
+// .allCards > mat-card-content{
+//     position: absolute;
+//     max-width: 100%;
+// }
+
+// .cardView1{
+//     padding-left: 100px;
+
+// }
+.allCards{
+    width: 88%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 8px;
+    margin: 10px auto;
+
 }
 
 .cardView1{
-    padding-left: 100px;
-
-}
-.cardView1 > mat-card{
-    width: 530px;
+    width: 480px;
+    height: 110px;
     background-color: #00C0EF;
+    display: flex;
+    mat-card{
+        width: 100%;
+        background-color: transparent;
+
+        mat-card-content{
+
+            .icon{
+                mat-icon{
+                    font-size: 80px; 
+                    display: grid; 
+                    place-items: center center; 
+                    justify-items: 
+                    flex-start; color: #FFFF;
+                    
+                }
+            }
+            .text{
+                position: relative;
+                height: 100%;
+
+                span{
+                    font-size: 50px; 
+                    display: grid; 
+                    justify-items: end; 
+                    color: #FFFF;
+                }
+                mat-card-subtitle{
+                    margin-top: 10px;
+                    display: grid;
+                    color: #FFFF; 
+                    place-items: end end;
+                }
+
+            }
+        }
+    }
 }
 
 
-.cardView2 > mat-card{
-    width: 530px;
-    background-color: #38D127;
+@media only screen and (max-width: 1260px){
+    .line::after{
+        width: 72% !important;
+        display: none;
+    }
+    .allCards{
+        width: 100%;
+        flex-wrap: wrap;
+        .cardView1{
+            flex-grow: 2;
+        }
+    }
+    .overView{
+        .refBut{
+            top: 10%;
+            right: 0px;
+            z-index: 10000;
+        }
+    }
 }
-
-.cardView3 > mat-card{
-    width: 530px;
-    background-color: #E93030;
+@media only screen and (max-width: 1200px){
+    .line::after{
+        width: 68% !important;
+        display: none;
+    } 
+    .allCards{
+        width: 96% !important;    
+    }
+    .overView{
+        .refBut{
+            top: 10%;
+            right: 23px;
+            z-index: 10000;
+        }
+    }
 }
+@media only screen and (max-width: 1085px){
+    
+    .line::after{
+        width: 62% !important;
+        display: none;
+    } 
+    .allCards{
+        width: 80% !important;    
+    }
+    .overView{
+        .refBut{
+            top: 10%;
+            right: 93px;
+            z-index: 10000;
+        }
+    }
+}
+@media only screen and (max-width: 885px){
+    .overView{
+        .line::after{
+            display: none;
+        } 
+        .refBut{
+            top: 10%;
+            right: 73px;
+            z-index: 10000;
+        }
+    }
+    .textOverview::after{
+        width: 100%;
+    }
+    .allCards{
+        width: 80% !important;    
+    }
+}
+@media only screen and (max-width: 605px){
+    .overView{
+        .refBut{
+            top: 10%;
+            right: 13px;
+            z-index: 10000;
+        } 
+    }
+   
+    .allCards{
+        width: 95% !important;    
 
+        .cardView1{
+            .icon{
+                mat-icon{
+                    font-size: 80px !important; 
+                }
+            }
+            .text{
+                position: relative;
+                height: 100%;
+
+                span{
+                    font-size: 35px !important; 
+                }
+
+            }
+        }
+    }
+}
 //Voters Bar //3B549D table head //366AB8 print color
+
 .votersBar{
     background-color: #5084D1;
     height: 60px;
     display: flex;
 }
+
 .votersValue{
     color: #ffff;
     font-family: sans-serif;
@@ -84,21 +245,35 @@ mat-toolbar {
 .example-spacer1 {
     flex: 1 1 auto;
 }
+.votersPrint{
+    display: flex;
+    
+}
 .printBut{
     background-color: #366AB8;
     color: #ffff;
+    position: absolute;
     font-size: 18px;
     margin-left: 780px;
     margin-top: 10px;
 }
 
+//     background-color: rgb(161, 160, 160);
+//     display: block;
+//     position: absolute;
+//     top: 11%;
+//     right: 7.5em;
+//     font-family: sans-serif;
+//     font-size: 15px;
+
 .searchBar{
     color: #ffff;
-    margin-left: 70px;
+    margin-left: 1370px;
     margin-top: 15px;
     font-family: sans-serif;
     font-size: 20px;
-
+    position: absolute;
+    display: flex;
 }
 .searchBar{
     .mat-icon{
@@ -113,6 +288,100 @@ mat-toolbar {
     flex: 1 1 auto;
 }
 
+@media only screen and (max-width: 1260px){
+    .votersBar{
+        width: 100%;
+        flex-wrap: wrap;
+        padding-left: 0%;
+    }
+    .votersValue{
+        position: relative;
+        height: 100%;
+        font-size: 23px !important;
+        right: 80px;
+        z-index: 10000;
+    }
+    .votersPrint{
+        width: 100%;
+        flex-wrap: wrap;
+        .printBut{
+            right: 193px;
+            z-index: 10000;
+            top: 47%;
+        }
+    }
+
+}
+@media only screen and (max-width: 1200px){
+    .votersValue{
+        font-size: 23px !important;
+        right: 80px;
+        z-index: 10000;
+    }
+    .votersPrint{
+        width: 100%;
+        flex-wrap: wrap;
+        .printBut{
+            right: 193px;
+            z-index: 10000;
+            top: 47%;
+        }
+    }
+  
+}
+@media only screen and (max-width: 1085px){
+    .votersPrint{
+        width: 100%;
+        flex-wrap: wrap;
+        .printBut{
+            right: 193px;
+            z-index: 10000;
+            top: 60%;
+        }
+    }
+   
+}
+@media only screen and (max-width: 885px){
+    .votersPrint{
+        width: 100%;
+        flex-wrap: wrap;
+        .printBut{
+            right: 193px;
+            z-index: 10000;
+            top: 60%;
+        }
+        .searchBar{
+            flex-wrap: wrap;
+            z-index: 10000;
+            right: 13px;
+            .searchForm{
+                width: 130px;
+                
+            }
+        }
+    }
+}
+@media only screen and (max-width: 605px){
+    .votersPrint{
+        width: 100%;
+        flex-wrap: wrap;
+        .printBut{
+            right: 193px;
+            z-index: 10000;
+            top: 60%;
+        }
+    }
+    .searchBar{
+        flex-wrap: wrap;
+        z-index: 10000;
+        right: 13px;
+        .searchForm{
+            width: 130px;
+            
+        }
+    }
+}
+
 //Table
 table{
     border-collapse: collapse;
@@ -120,6 +389,7 @@ table{
     
 }
 .studentTable{
+    display: flex;
     justify-content: center;
     align-items: center;
     margin: 0px 90px 90px 90px;
@@ -142,4 +412,3 @@ table{
     color: white;
 }
 //.studentTable tr:nth-child(even){background-color: #f2f2f2;}
-

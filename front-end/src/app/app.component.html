@@ -1,4 +1,3 @@
-
 <mat-toolbar class="mat-elevation-z5">
   <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
     <mat-icon>menu</mat-icon>
@@ -8,7 +7,6 @@
   <span>ADMIN</span> 
   <button mat-button><mat-icon color="warn">exit_to_app</mat-icon></button>
 </mat-toolbar>
-
 <br>
 <br>
 
@@ -16,49 +14,56 @@
 <div class="overView">
   <mat-icon>leaderboard</mat-icon>
   <span class="textOverview">Overview</span>
+  <span class="line"></span>
+  <!-- <hr width="50%" color="silver" size="4px" /> -->
   <button mat-button class="refBut"><mat-icon>refresh</mat-icon>Refresh</button>
 </div>
 
-<br>
-<br>
- 
 <!--CARDS-->
-<div class="allCards" fxLayout fxLayoutGap = "60px">
+<div class="allCards" >
   <div class="cardView1"> <!--blue-->
     <mat-card>
       <mat-card-content>
         <!-- <mat-card-title style="font-size: 50px; display: grid; justify-items: end; color: #FFFF;">1,973</mat-card-title>  -->
-        <mat-icon  style="font-size: 80px; display: grid; place-items: left center; color: #FFFF;">group</mat-icon> 
-        <span style="font-size: 50px; display: grid; justify-items: end; color: #FFFF;">1,973</span>
-        <br>
-        <mat-card-subtitle style="font-size: 15px; display: grid;color: #FFFF; place-items: end end;">Total Voters</mat-card-subtitle>
+       <div class="icon">
+          <mat-icon>group</mat-icon>
+       </div>
+        <div class="text">
+          <span>1,973</span>
+          <mat-card-subtitle>TOTAL VOTERS</mat-card-subtitle>
+        </div>
       </mat-card-content>
     </mat-card>
   </div>
-  <div class="cardView2"> <!--green-->
-    <mat-card >
+  <div class="cardView1"> <!--green-->
+    <mat-card style="background-color: green;">
       <mat-card-content>
-        <mat-icon style="font-size: 80px; display: grid; place-items: center center; justify-items: flex-start; color: #FFFF;">group</mat-icon>
+        <div class="icon">
+          <mat-icon>group</mat-icon>
+       </div>
         <!-- <mat-card-title style="font-size: 50px; display: grid; justify-items: end; color: #FFFF;">1,245</mat-card-title> -->
-        <span style="font-size: 50px; display: grid; justify-items: end; color: #FFFF;">1,245</span>
-        <br>
-        <mat-card-subtitle style="font-size: 15px; display: grid;color: #FFFF; place-items: end end;">VOTED</mat-card-subtitle>
+        <div class="text">
+          <span>1,245</span>
+          <mat-card-subtitle>VOTED</mat-card-subtitle>
+        </div>
       </mat-card-content>
     </mat-card>
   </div>
-  <div class="cardView3"> <!--red-->
-    <mat-card>
+  <div class="cardView1"> <!--red-->
+    <mat-card style="background-color: red;"> 
       <mat-card-content>
-        <mat-icon style="font-size: 80px; display: grid; place-items: center center; justify-items: flex-start; color: #FFFF;">group</mat-icon>
+        <div class="icon">
+          <mat-icon>group</mat-icon>
+        </div>
         <!-- <mat-card-title style="font-size: 50px; display: grid; justify-items: end; color: #FFFF;">728</mat-card-title> -->
-        <span style="font-size: 50px; display: grid; justify-items: end; color: #FFFF;">728</span>
-        <br>
-        <mat-card-subtitle style="font-size: 15px; display: grid;color: #FFFF; place-items: end end;">HAVEN'T VOTED</mat-card-subtitle>
+        <div class="text">
+          <span>728</span>
+          <mat-card-subtitle>HAVEN'T VOTED</mat-card-subtitle>
+        </div>
       </mat-card-content>
     </mat-card>
   </div>
 </div>
-
 
 <!-- Voters Search Bar-->
 <br>
@@ -147,7 +152,3 @@
 
 
 <router-outlet></router-outlet>
-
-
-
-
